@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Title:</strong>
+  <%= @retro_board.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @retro_board.description %>
+</p>
+<div id="retro_items_wrapper">
+ <%= render @retro_board.retro_items %>
+ <div id="form">
+  <%= render "retro_items/form" %>
+ </div>
+</div>
+<%= link_to 'Edit', edit_retro_board_path(@retro_board) %> |
+<%= link_to 'Back', retro_boards_path %>
