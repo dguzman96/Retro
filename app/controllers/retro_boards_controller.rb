@@ -1,9 +1,9 @@
-class RetroListsController < ApplicationController
+class RetroBoardsController < ApplicationController
   before_action :set_retro_board, only: %i[ show edit update destroy ]
 
   # GET /retro_boards or /retro_boards.json
   def index
-    @retro_boards = RetroList.all
+    @retro_boards = RetroBoard.all
   end
 
   # GET /retro_boards/1 or /retro_boards/1.json
@@ -12,7 +12,7 @@ class RetroListsController < ApplicationController
 
   # GET /retro_boards/new
   def new
-    @retro_board = RetroList.new
+    @retro_board = RetroBoard.new
   end
 
   # GET /retro_boards/1/edit
@@ -21,7 +21,7 @@ class RetroListsController < ApplicationController
 
   # POST /retro_boards or /retro_boards.json
   def create
-    @retro_board = RetroList.new(retro_board_params)
+    @retro_board = RetroBoard.new(retro_board_params)
 
     respond_to do |format|
       if @retro_board.save
@@ -59,7 +59,7 @@ class RetroListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_retro_board
-      @retro_board = RetroList.find(params[:id])
+      @retro_board = RetroBoard.find(params[:id])
     end
 
     # Only allow a board of trusted parameters through.

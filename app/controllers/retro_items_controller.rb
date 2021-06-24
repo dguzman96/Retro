@@ -30,7 +30,7 @@ class RetroItemsController < ApplicationController
   private
 
   def set_retro_board
-    @retro_board = RetroList.find(params[:retro_board_id])
+    @retro_board = RetroBoard.find(params[:retro_board_id])
   end
 
   def set_retro_item
