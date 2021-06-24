@@ -10,36 +10,36 @@ class RetroBoardsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Retro Boards"
   end
 
-  test "creating a Retro board" do
+  test "creating a Retro Board" do
     visit retro_boards_url
     click_on "New Retro Board"
 
     fill_in "Description", with: @retro_board.description
     fill_in "Title", with: @retro_board.title
-    click_on "Create Retro board"
+    click_on "Create Retro Board"
 
-    assert_text "Retro board was successfully created"
+    assert_text "Retro Board was successfully created"
     click_on "Back"
   end
 
-  test "updating a Retro board" do
+  test "updating a Retro Board" do
     visit retro_boards_url
     click_on "Edit", match: :first
 
     fill_in "Description", with: @retro_board.description
     fill_in "Title", with: @retro_board.title
-    click_on "Update Retro board"
+    click_on "Update Retro Board"
 
-    assert_text "Retro board was successfully updated"
+    assert_text "Retro Board was successfully updated"
     click_on "Back"
   end
 
-  test "destroying a Retro board" do
+  test "destroying a Retro Board" do
     visit retro_boards_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
 
-    assert_text "Retro board was successfully destroyed"
+    assert_text "Retro Board was successfully destroyed"
   end
 end
