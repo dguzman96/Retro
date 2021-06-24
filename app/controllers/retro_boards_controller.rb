@@ -57,13 +57,11 @@ class RetroBoardsController < ApplicationController
   end
 
   def destroy
-    @retro_item = @retro_board.retro_items.find(params[:id])
-    if @retro_item.destroy
-      flash[:success] = "Retro Board item was deleted."
-    else
-      flash[:error] = "Retro Board item could not be deleted."
+    @todo_list.destroy
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
+      format.json { head :no_content }
     end
-    redirect_to @retro_board
   end
 
   private
