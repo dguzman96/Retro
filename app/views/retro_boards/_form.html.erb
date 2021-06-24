@@ -1,11 +1,11 @@
-<%= form_with(model: retro_board) do |form| %>
+<%= form_with(model: retro_board, local: true) do |form| %>
   <% if retro_board.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(retro_board.errors.count, "error") %> prohibited this retro_board from being saved:</h2>
 
       <ul>
-        <% retro_board.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% retro_board.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
@@ -24,9 +24,4 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
-
-<%= form_for([@retro_board, @retro_board.retro_items.build]) do |f| %>
- <%= f.text_field :content, placeholder: "New Retro" %>
- <%= f.submit %>
 <% end %>
