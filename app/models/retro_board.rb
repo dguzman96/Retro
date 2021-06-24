@@ -1,3 +1,3 @@
 class RetroBoard < ApplicationRecord
-   has_many :todo_items
+   has_many :retro_items
 end

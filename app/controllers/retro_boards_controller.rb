@@ -1,9 +1,9 @@
-class RetroBoardsController < ApplicationController
+class RetroListsController < ApplicationController
   before_action :set_retro_board, only: %i[ show edit update destroy ]
 
   # GET /retro_boards or /retro_boards.json
   def index
-    @retro_boards = RetroBoard.all
+    @retro_boards = RetroList.all
   end
 
   # GET /retro_boards/1 or /retro_boards/1.json
@@ -12,7 +12,7 @@ class RetroBoardsController < ApplicationController
 
   # GET /retro_boards/new
   def new
-    @retro_board = RetroBoard.new
+    @retro_board = RetroList.new
   end
 
   # GET /retro_boards/1/edit
@@ -21,11 +21,11 @@ class RetroBoardsController < ApplicationController
 
   # POST /retro_boards or /retro_boards.json
   def create
-    @retro_board = RetroBoard.new(retro_board_params)
+    @retro_board = RetroList.new(retro_board_params)
 
     respond_to do |format|
       if @retro_board.save
-        format.html { redirect_to @retro_board, notice: "Retro board was successfully created." }
+        format.html { redirect_to @retro_board, notice: "Retro Board item was successfully created." }
         format.json { render :show, status: :created, location: @retro_board }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class RetroBoardsController < ApplicationController
   def update
     respond_to do |format|
       if @retro_board.update(retro_board_params)
-        format.html { redirect_to @retro_board, notice: "Retro board was successfully updated." }
+        format.html { redirect_to @retro_board, notice: "Retro Board item was successfully updated." }
         format.json { render :show, status: :ok, location: @retro_board }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,15 +51,7 @@ class RetroBoardsController < ApplicationController
   def destroy
     @retro_board.destroy
     respond_to do |format|
-      format.html { redirect_to retro_boards_url, notice: "Retro board was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
-
-  def destroy
-    @todo_list.destroy
-    respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Retro Board item was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -67,7 +59,7 @@ class RetroBoardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_retro_board
-      @retro_board = RetroBoard.find(params[:id])
+      @retro_board = RetroList.find(params[:id])
     end
 
     # Only allow a board of trusted parameters through.
