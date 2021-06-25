@@ -56,6 +56,21 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+  span {
+    margin-right: 1.5em;
+  }
+}
+
+h2, .h2{
+  margin-below: 30px
+}
+
+p{
+  margin-below: 10px;
+}
+
 .container {
  width: 50%;
  max-width: 750px;
