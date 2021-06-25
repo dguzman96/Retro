@@ -1,3 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Retro Board</h1>
+
 <% @retro_boards.each do |retro_board| %>
 <div class="index_row clearfix">
   <h2 class="retro_board_title"><%= link_to retro_board.title, retro_board %></h2>
